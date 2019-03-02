@@ -18,7 +18,7 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.6,<3.7
     - pip
     - setuptools >=30.3.0
   run:
@@ -41,7 +41,7 @@ requirements:
     - lxml
     - numpy
     - pygcn >=0.1.16
-    - python >=3.6
+    - python >=3.6,<3.7
     - redis-py
     - safe-netrc
     - sentry-sdk
