@@ -26,27 +26,32 @@ requirements:
     - celery >=4.2.0
     - celery-eternal >=0.0.3
     - comet
+    - corner
+    - flask
+    - flask-caching
     - flower
     - gwdatafind
     - gwpy
     - healpy
     - jinja2
     - lalsuite >=6.52
-    - ligo-followup-advocate >=0.0.11
-    - ligo-gracedb >=2.1.1
-    - ligo-raven >=1.8
+    - ligo-followup-advocate >=0.0.21
+    - ligo-gracedb >=2.2.0
+    - ligo-raven >=1.10
     - ligo-segments
-    - ligo.skymap >=0.1.0
+    - ligo.skymap >=0.1.1
     - lscsoft-glue
     - lxml
     - numpy
-    - pygcn >=0.1.16
+    - p_astro 0.4
+    - pygcn >=0.1.19
     - python >=3.6,<3.7
-    - redis-py
+    - redis-py <3.2.0
     - safe-netrc
     - sentry-sdk
     - service_identity
-    - sleek-lvalert
+    - sleek-lvalert >=0.0.4
+    - tornado <6.0a0
     - voeventlib >=1.2
 
 test:
@@ -63,10 +68,14 @@ about:
   home: https://git.ligo.org/emfollow/gwcelery
   license: GPLv2+
   license_family: GPL
-  license_file: doc/license.md
+  license_file: doc/license.rst
   summary: Hipster pipeline for annotating LIGO events
   doc_url: https://gwcelery.readthedocs.io/en/latest/
   dev_url: https://git.ligo.org/emfollow/gwcelery
+  description: |
+    GWCelery is a simple and reliable package for annotating and
+    orchestrating LIGO/Virgo alerts, built from widely used
+    open source components.
 
 extra:
   recipe-maintainers:
