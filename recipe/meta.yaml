@@ -1,5 +1,5 @@
 {% set name = "gwcelery" %}
-{% set version = "0.9.0" %}
+{% set version = "0.9.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 1ee4a6fe13148f5be1199564bf49167ca4e212931e978a8ac17a42ad626ca8d7
+  sha256: e4adfee9bd41dd5c462443d49842ce27158ef6440bf44945fe8c13239fa04413
 
 build:
   number: 0
@@ -23,24 +23,26 @@ requirements:
     - setuptools >=30.3.0
   run:
     - astropy <4
+    - bilby_pipe 0.3.6
     - celery 4.3.0
     - comet
+    - corner
     - dnspython
     - flask
     - flask-caching
     - flower
     - gwdatafind
-    - gwpy <=0.15.0
-    - healpy
+    - gwpy
+    - healpy <1.13.0
     - imapclient
     - jinja2
     - kombu <=4.5.0
-    - lalsuite 6.60
-    - ligo-followup-advocate 1.1.3
+    - lalsuite >=6.63
+    - ligo-followup-advocate >=1.1.3
     - ligo-gracedb >=2.3.0
     - ligo-raven >=1.17
     - ligo-segments
-    - ligo.skymap 0.1.13
+    - ligo.skymap >=0.1.13
     - lscsoft-glue
     - lxml
     - numpy
@@ -50,7 +52,6 @@ requirements:
     - python-ligo-lw
     - redis-py
     - safe-netrc
-    - scipy <1.3.0
     - sentry-sdk
     - service_identity
     - sleek-lvalert >=0.0.4
@@ -62,6 +63,7 @@ test:
   imports:
     - gwcelery
   requires:
+    - openssh
     - pytest >=3.0
     - pytest-socket
     - pytest-flask
