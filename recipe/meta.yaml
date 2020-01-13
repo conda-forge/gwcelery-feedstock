@@ -1,5 +1,5 @@
 {% set name = "gwcelery" %}
-{% set version = "0.9.1" %}
+{% set version = "0.9.2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: e4adfee9bd41dd5c462443d49842ce27158ef6440bf44945fe8c13239fa04413
+  sha256: 8c07c0276307db89636da428437bd43da160868b855a6faafbeb0d6031131c98
 
 build:
   number: 0
@@ -23,8 +23,8 @@ requirements:
     - setuptools >=30.3.0
   run:
     - astropy <4
-    - bilby_pipe 0.3.6
-    - celery 4.3.0
+    - bilby_pipe >=0.3.8
+    - celery 4.4.0
     - comet
     - corner
     - dnspython
@@ -37,7 +37,7 @@ requirements:
     - imapclient
     - jinja2
     - kombu <=4.5.0
-    - lalsuite >=6.63
+    - lalsuite 6.64
     - ligo-followup-advocate >=1.1.3
     - ligo-gracedb >=2.3.0
     - ligo-raven >=1.17
@@ -65,8 +65,8 @@ test:
   requires:
     - openssh
     - pytest >=3.0
-    - pytest-socket
     - pytest-flask
+    - pytest-socket
   commands:
     - gwcelery --version
     - python -m pytest --pyargs gwcelery
