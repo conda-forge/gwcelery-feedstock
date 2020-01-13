@@ -23,8 +23,8 @@ requirements:
     - setuptools >=30.3.0
   run:
     - astropy <4
-    - bilby_pipe 0.3.6
-    - celery 4.3.0
+    - bilby_pipe >=0.3.8
+    - celery 4.4.0
     - comet
     - corner
     - dnspython
@@ -37,7 +37,7 @@ requirements:
     - imapclient
     - jinja2
     - kombu <=4.5.0
-    - lalsuite >=6.63
+    - lalsuite 6.64
     - ligo-followup-advocate >=1.1.3
     - ligo-gracedb >=2.3.0
     - ligo-raven >=1.17
@@ -65,8 +65,8 @@ test:
   requires:
     - openssh
     - pytest >=3.0
-    - pytest-socket
     - pytest-flask
+    - pytest-socket
   commands:
     - gwcelery --version
     - python -m pytest --pyargs gwcelery
