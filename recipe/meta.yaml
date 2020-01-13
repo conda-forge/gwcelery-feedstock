@@ -75,7 +75,7 @@ about:
   doc_url: "https://gwcelery.readthedocs.io/en/latest/"
   license: "GPL-2.0-or-later"
   license_family: "GPL"
-  license_file: "doc/license.rst"
+  license_file: "LICENSE.rst"
   summary: "Hipster pipeline for annotating LIGO events"
   description: |
     GWCelery is a simple and reliable package for annotating and orchestrating
