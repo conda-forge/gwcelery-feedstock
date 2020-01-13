@@ -22,7 +22,7 @@ requirements:
     - pip
     - setuptools >=30.3.0
   run:
-    - astropy
+    - astropy <4
     - celery 4.3.0
     - comet
     - dnspython
@@ -30,16 +30,17 @@ requirements:
     - flask-caching
     - flower
     - gwdatafind
-    - gwpy
+    - gwpy <=0.15.0
     - healpy
+    - imapclient
     - jinja2
     - kombu <=4.5.0
     - lalsuite 6.60
-    - ligo-followup-advocate 1.0.2
+    - ligo-followup-advocate 1.1.3
     - ligo-gracedb >=2.3.0
     - ligo-raven >=1.17
     - ligo-segments
-    - ligo.skymap 0.1.9
+    - ligo.skymap 0.1.13
     - lscsoft-glue
     - lxml
     - numpy
@@ -49,6 +50,7 @@ requirements:
     - python-ligo-lw
     - redis-py
     - safe-netrc
+    - scipy <1.3.0
     - sentry-sdk
     - service_identity
     - sleek-lvalert >=0.0.4
