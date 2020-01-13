@@ -63,6 +63,7 @@ test:
   imports:
     - gwcelery
   requires:
+    - openssh
     - pytest >=3.0
     - pytest-socket
     - pytest-flask
