@@ -1,20 +1,20 @@
 {% set name = "gwcelery" %}
-{% set version = "0.11.1" %}
+{% set version = "0.11.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: d812f5457ef95ddc0d3c485413f43b67e6e4b0d18b4cc33fb6908aedd07978b0
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: c9a3066584470f1abfa9320c4ceacaccfa1f00d39a29845f94841d8115498b33
 
 build:
   entry_points:
     - gwcelery = gwcelery:app.start
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -74,13 +74,13 @@ test:
     - python -m pytest --pyargs gwcelery
 
 about:
-  home: "https://git.ligo.org/emfollow/gwcelery"
-  dev_url: "https://git.ligo.org/emfollow/gwcelery"
-  doc_url: "https://gwcelery.readthedocs.io/en/latest/"
-  license: "GPL-2.0-or-later"
-  license_family: "GPL"
-  license_file: "LICENSE.rst"
-  summary: "Hipster pipeline for annotating LIGO events"
+  home: https://git.ligo.org/emfollow/gwcelery
+  dev_url: https://git.ligo.org/emfollow/gwcelery
+  doc_url: https://gwcelery.readthedocs.io/en/latest/
+  license: GPL-2.0-or-later
+  license_family: GPL
+  license_file: LICENSE.rst
+  summary: Hipster pipeline for annotating LIGO events
   description: |
     GWCelery is a simple and reliable package for annotating and orchestrating
     LIGO/Virgo alerts, built from widely used open source components.
