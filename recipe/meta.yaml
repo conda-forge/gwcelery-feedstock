@@ -10,11 +10,11 @@ source:
   sha256: d812f5457ef95ddc0d3c485413f43b67e6e4b0d18b4cc33fb6908aedd07978b0
 
 build:
-  number: 0
-  noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - gwcelery = gwcelery:app.start
+  noarch: python
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
@@ -35,7 +35,7 @@ requirements:
     - healpy
     - imapclient
     - jinja2
-    - lalsuite 6.64
+    - lalsuite
     - ligo-followup-advocate >=1.1.3
     - ligo-gracedb >=2.3.0
     - ligo-raven >=1.17
