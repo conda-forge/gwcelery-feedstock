@@ -23,7 +23,7 @@ requirements:
     - setuptools >=30.3.0
   run:
     - bilby_pipe >=0.3.8
-    - celery 4.4.0
+    - celery >=4.4.0
     - comet
     - corner
     - dnspython
