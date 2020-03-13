@@ -1,5 +1,5 @@
 {% set name = "gwcelery" %}
-{% set version = "0.11.2" %}
+{% set version = "0.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c9a3066584470f1abfa9320c4ceacaccfa1f00d39a29845f94841d8115498b33
+  sha256: 0490ec218534c778cfb113dd03f90049b43caf3a1debc0b4bbc7d03db3811e9b
 
 build:
   entry_points:
@@ -23,7 +23,7 @@ requirements:
     - setuptools >=30.3.0
   run:
     - bilby_pipe >=0.3.8
-    - celery 4.4.0
+    - celery >=4.4.0
     - comet
     - corner
     - dnspython
