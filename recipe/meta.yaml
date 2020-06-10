@@ -1,5 +1,5 @@
 {% set name = "gwcelery" %}
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0490ec218534c778cfb113dd03f90049b43caf3a1debc0b4bbc7d03db3811e9b
+  sha256: 03eeba9f0e0d85d6492b4d180685427856be887b723d7271f907dacd43cfa954
 
 build:
   entry_points:
