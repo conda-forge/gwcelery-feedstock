@@ -8,70 +8,89 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: d154c48d0cd6369b38545b95ccb6d427ff35a52845a2f9c5a683610af201a6ce
+  patches:
+    # update requirements for conda
+    - requirements.patch
 
 build:
   entry_points:
-    - gwcelery = gwcelery:app.start
+    - gwcelery = gwcelery:main
+    - gwcelery-condor-submit-helper = gwcelery.tools.condor_submit_helper:main
   noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.6
     - pip
-    - setuptools >=30.3.0
+    - python >=3.8
+    - poetry-core >=1.0.0
+    - poetry-dynamic-versioning
   run:
+    - astropy >=4.3.1
     - bilby_pipe >=0.3.8
-    - celery >=4.4.0
+    - celery >=5.1
+    - click 7
     - comet
     - corner
     - dnspython
     - flask
     - flask-caching
-    - gracedb-sdk >=0.1.4
+    - gracedb-sdk >=0.1.5
     - gwdatafind
-    - gwpy
+    - gwpy >=2.0.1
     - healpy
     - imapclient
-    - jinja2
-    - lalsuite
+    - jinja2 >=2.11.2
     - ligo-followup-advocate >=1.1.6
-    - ligo-gracedb >=2.3.0
-    - ligo-raven >=1.17
+    - ligo-gracedb >=2.7.5
+    - ligo-raven >=2.0
     - ligo-segments
-    - ligo.skymap >=0.1.13
+    - ligo.em-bright >=1.0
+    - ligo.skymap >=0.4.0
     - lscsoft-glue
     - lxml
     - numpy
-    - p_astro 0.8.1
-    - pygcn >=0.1.19
-    - python >=3.6
-    - python-ligo-lw
+    - p_astro >=1.0
+    - pygcn >=1.0.1
+    - python >=3.8
+    - python-lal >=7.1.2
+    - python-ligo-lw >=1.7.0,<1.8.0a0
     - redis-py
     - safe-netrc
     - sentry-sdk
     - service_identity
-    - sleek-lvalert >=0.0.4
-    - tornado >=5
+    - sleek-lvalert <2.0.0
     - voeventlib >=1.2
-    - werkzeug >=0.15.0,<1.0.0a0
+    - werkzeug >=0.15.0
+    - zstandard
+    # extras for sentry-sdk[flask]
+    - blinker >=1.1
+    # extras for sentry-sdk[tornado]
+    - tornado >=5
 
 test:
-  imports:
-    - gwcelery
   requires:
     # for scikit-learn
     - openblas
     # for mpi
     - openssh
+    # for pip check
+    - pip
     # for gwcelery's test suite
     - pytest >=3.0
+    - pytest-celery
     - pytest-flask
     - pytest-socket
+    # to help 'pip check'
+    - arviz >=0.12.1
   commands:
-    - gwcelery --version
+    # check requirements
+    - python -m pip check
+    # run test suite
     - python -m pytest --pyargs gwcelery
+    # check entry points
+    - gwcelery report
 
 about:
   home: https://git.ligo.org/emfollow/gwcelery
