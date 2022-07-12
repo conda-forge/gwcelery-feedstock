@@ -1,0 +1,20 @@
+diff --git a/pyproject.toml b/pyproject.toml
+index 9d4377b..a86f23e 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -62,7 +62,6 @@ healpy = "*"
+ imapclient = "*"
+ importlib-metadata = { version = "*", python = "<3.8" }
+ jinja2 = ">=2.11.2"  # https://github.com/pallets/jinja/issues/1168
+-lalsuite = ">=6.82"  # https://git.ligo.org/lscsoft/lalsuite/-/issues/414
+ ligo-followup-advocate = ">=1.1.6"
+ ligo-gracedb = ">=2.7.5"  # https://git.ligo.org/lscsoft/gracedb-client/-/issues/28
+ ligo-raven = ">=2.0"
+@@ -73,7 +72,6 @@ lscsoft-glue = "*"
+ lxml = "*"
+ numpy = "*"
+ p-astro = ">=1.0"
+-pesummary = "<0.13"  # https://git.ligo.org/lscsoft/pesummary/-/issues/269. FIXME: remove this requirement entirely once resolved.
+ pygcn = ">=1.0.1"
+ python-ligo-lw = "~1.7.0"  # https://git.ligo.org/lscsoft/ligo.skymap/-/merge_requests/255
+ safe-netrc = "*"
