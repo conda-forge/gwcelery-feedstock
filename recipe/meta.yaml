@@ -1,5 +1,5 @@
 {% set name = "gwcelery" %}
-{% set version = "1.0.1" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d154c48d0cd6369b38545b95ccb6d427ff35a52845a2f9c5a683610af201a6ce
+  sha256: abb7e0bf3c6cd6e650ccdfe64d705e9da767c177f3dc7de81e18d25395a1c526
   patches:
     # update requirements for conda
     - requirements.patch
