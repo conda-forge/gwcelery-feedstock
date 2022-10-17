@@ -86,6 +86,7 @@ test:
     - pytest-celery
     - pytest-flask
     - pytest-socket
+    - redis-server
   commands:
     # check requirements
     - python -m pip check
