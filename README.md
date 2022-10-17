@@ -11,7 +11,7 @@ Summary: Hipster pipeline for annotating LIGO events
 
 Development: https://git.ligo.org/emfollow/gwcelery
 
-Documentation: https://gwcelery.readthedocs.io/en/latest/
+Documentation: https://gwcelery.readthedocs.io/
 
 GWCelery is a simple and reliable package for annotating and orchestrating
 LIGO/Virgo alerts, built from widely used open source components.
