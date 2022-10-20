@@ -1,0 +1,25 @@
+From 6433d46ea8cc1756d1e30dd9a0365157fb07783a Mon Sep 17 00:00:00 2001
+From: "duncan.macleod" <duncan.macleod@ligo.org>
+Date: Mon, 17 Oct 2022 10:09:57 +0100
+Subject: [PATCH] pyproject.toml: update requirements for conda
+
+we don't need all of lalsuite
+---
+ pyproject.toml | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/pyproject.toml b/pyproject.toml
+index b59963e..f9f50de 100644
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -66,7 +66,6 @@ igwn-alert = ">=0.2.2"
+ imapclient = "*"
+ importlib-metadata = { version = "*"}
+ jinja2 = ">=2.11.2"  # https://github.com/pallets/jinja/issues/1168
+-lalsuite = ">=6.82"  # https://git.ligo.org/lscsoft/lalsuite/-/issues/414
+ ligo-followup-advocate = ">=1.1.6"
+ ligo-gracedb = ">=2.7.5"  # https://git.ligo.org/lscsoft/gracedb-client/-/issues/28
+ ligo-raven = ">=2.0"
+-- 
+2.35.0
+
