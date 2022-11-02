@@ -1,5 +1,5 @@
 {% set name = "gwcelery" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: abb7e0bf3c6cd6e650ccdfe64d705e9da767c177f3dc7de81e18d25395a1c526
+  sha256: f1bba81b988fb9a8a24222690a217a60c58c82609b2e1ae3d26150ac9eca7321
   patches:
     - 0001-pyproject.toml-update-requirements-for-conda.patch
 
@@ -47,7 +47,7 @@ requirements:
     - ligo-gracedb >=2.7.5
     - ligo-raven >=2.0
     - ligo-segments
-    - ligo.em-bright >=1.0
+    - ligo.em-bright >=1.0.4
     - ligo.skymap >=0.4.0
     - lscsoft-glue
     - lxml
@@ -88,8 +88,9 @@ test:
     - pytest-socket
     - redis-server
   commands:
-    # check requirements
-    - python -m pip check
+    # check metadata
+    - python -m pip check gwcelery
+    - python -m pip show gwcelery
     # run test suite
     - python -m pytest -ra --pyargs gwcelery.tests
     # check entry points
