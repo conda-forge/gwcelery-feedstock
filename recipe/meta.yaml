@@ -47,7 +47,7 @@ requirements:
     - ligo-gracedb >=2.7.5
     - ligo-raven >=2.0
     - ligo-segments
-    - ligo.em-bright >=1.0
+    - ligo.em-bright >=1.0.4
     - ligo.skymap >=0.4.0
     - lscsoft-glue
     - lxml
