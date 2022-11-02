@@ -88,8 +88,9 @@ test:
     - pytest-socket
     - redis-server
   commands:
-    # check requirements
-    - python -m pip check
+    # check metadata
+    - python -m pip check gwcelery
+    - python -m pip show gwcelery
     # run test suite
     - python -m pytest -ra --pyargs gwcelery.tests
     # check entry points
