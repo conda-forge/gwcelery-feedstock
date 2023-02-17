@@ -1,5 +1,5 @@
 {% set name = "gwcelery" %}
-{% set version = "2.0.1" %}
+{% set version = "2.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f1bba81b988fb9a8a24222690a217a60c58c82609b2e1ae3d26150ac9eca7321
+  sha256: 955c6912c3dcf3dc0f895f4dc95d3825abb34db4aec9a941e7b32d3bda21aa8e
   patches:
     - 0001-pyproject.toml-update-requirements-for-conda.patch
 
