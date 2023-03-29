@@ -1,11 +1,11 @@
-About gwcelery
-==============
+About gwcelery-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gwcelery-feedstock/blob/main/LICENSE.txt)
 
 Home: https://git.ligo.org/emfollow/gwcelery
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gwcelery-feedstock/blob/main/LICENSE.txt)
 
 Summary: Hipster pipeline for annotating LIGO events
 
