@@ -16,7 +16,7 @@ build:
     - gwcelery = gwcelery:main
     - gwcelery-condor-submit-helper = gwcelery.tools.condor_submit_helper:main
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -27,7 +27,7 @@ requirements:
     - poetry-dynamic-versioning
   run:
     - adc-streaming >=2.2.0
-    - astropy >=4.3.1
+    - astropy-base >=4.3.1
     - bilby_pipe >=1.0.6
     - celery >=5.1
     - click >=7
