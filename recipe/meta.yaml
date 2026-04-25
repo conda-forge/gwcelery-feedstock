@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: f1bba81b988fb9a8a24222690a217a60c58c82609b2e1ae3d26150ac9eca7321
   patches:
     - 0001-pyproject.toml-update-requirements-for-conda.patch
@@ -16,13 +16,13 @@ build:
     - gwcelery = gwcelery:main
     - gwcelery-condor-submit-helper = gwcelery.tools.condor_submit_helper:main
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8,<3.11
+    - python {{ python_min }}
     - poetry-core >=1.0.0
     - poetry-dynamic-versioning
   run:
@@ -55,7 +55,7 @@ requirements:
     - p_astro >=1.0.1
     - pesummary
     - pygcn >=1.0.1
-    - python >=3.8,<3.11
+    - python >={{ python_min }},<3.11
     - python-confluent-kafka >=1.9.2,<2.0.0
     - python-lal >=7.1.2
     - python-ligo-lw >=1.8.3,<2.0.0
@@ -87,6 +87,7 @@ test:
     - pytest-flask
     - pytest-socket
     - redis-server
+    - python {{ python_min }}
   commands:
     # check metadata
     - python -m pip check gwcelery
